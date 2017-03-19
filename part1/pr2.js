@@ -7,7 +7,7 @@ even-value
 'use strict';
 function sum(number) {
     var temp, sum = 0, a = 0, b = 1;
-    while (b < limit) {
+    while (b < number) {
         temp = a;
         a = b;
         b += temp;
