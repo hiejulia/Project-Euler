@@ -19,7 +19,7 @@ function biggest(n) {
     }
   }
 
-
+return max;
 }
 
 //call the function
