@@ -1,5 +1,5 @@
 'use strict';
-var fs = require('fs');
+var fs = require('fs');//import fs 
 var alpha = {
   'a': 1,
   'b': 2,
@@ -30,18 +30,41 @@ var alpha = {
 };
 
 function nameScore(name){
-var scoreSum  = 0;
+            var scoreSum  = 0;
+            //name = HIEN
 
-  var characters = name.split('');
+            var characters = name.split('');//H=... I=... E=.... N=....
 
-  for (var i=0; i<characters.length; i++) {
-    scoreSum += alpha[characters[i]];
-  }
+            for (var i=0; i<characters.length; i++) {
+                scoreSum += alpha[characters[i]];
+            }
 
-  return score;
+            return scoreSum;//get the score sum 
 
 }
-
+//read the names.txt 
 fs.readFile('names.txt', 'utf8', function (err, data) {
+        if (err) throw err;//throw err 
+
+        var nameList  = data.split(',');
+
+        for (var i=0; i<nameList.length; i++) {
+        nameList[i] = nameList[i].trim().toLowerCase();
+    }
+
+    nameList.sort();//sort abc
+
+
+    var result  = 0;
+
+    for (i=0; i<nameList.length; i++) {
+        result  += (i+1)*nameScore(list[i]);
+    }
+    return result;
+
+    console.log(result);
 
 });
+
+
+
