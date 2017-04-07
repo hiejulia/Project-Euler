@@ -42,20 +42,18 @@ var bigInt = require("big-integer");
 //   return b;
 // }
 
-
-
-
-
+// var zero = bigInt();
 //recursion solution
 function fibonacciRecursion(n){
+    n = bigInt(n);
     if(n<1) return 1;
-    return fibonacciRecursion(n-1) + fibonacciRecursion(n-2);
+    return bigInt(fibonacciRecursion(n-1) + fibonacciRecursion(n-2));
 }
 
-function fib(n) {
-  return function(n, a, b) {
-    return n>0 ? arguments.callee(n-1,b,a.add(b)) : a;
-  }(n, bigint(0), bigint(1));
-}
+// function fib(n) {
+//   return function(n, a, b) {
+//     return n>0 ? arguments.callee(n-1,b,a.add(b)) : a;
+//   }(n, bigint(0), bigint(1));
+// }
 
-module.exports = fib;
+module.exports = fibonacciRecursion;
