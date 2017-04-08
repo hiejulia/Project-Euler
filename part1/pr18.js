@@ -1,6 +1,9 @@
 (function(){
-    'use strict';
 
+    //get data from the tree
+    function getData(){
+    'use strict';
+    
     //create a tree to save the data structure 
     var tree  = "75\n";
         tree += "95 64\n";
@@ -18,8 +21,88 @@
         tree += "63 66 04 68 89 53 67 30 73 16 69 87 40 31\n";
         tree += "04 62 98 27 23 09 70 98 73 93 38 53 60 04 23";
 
-
+//========
+var mainArray =[];//this is array that hold each value is array = row
         //get all the numbers
+        var row = tree.split('\n');
+        for(var i in row){
+            var rowArray = [];
+            var elements = rows[i].split(' ');
+            for (var k in elements){
+                rowArray.push(parseInt(elements[k]));
+            }
+            mainArray.push(rowArray);
+        }
+        return mainArray;//main array
+    }
+
+
+//sort 
+function sortIt(a,b){
+    return b-a;
+
+}
+function maxOfEach(array){
+    
+    var max = array[0];
+    var index;
+    for(var i = 0;i<3;i++){
         
+        if(array[i] > max){
+            max= array[i];
+            index = i;
+        }
+    }
+    return max;//and index
+}
+
+function findIndex(array){
+        var max = array[0];
+    var index;
+    for(var i = 0;i<3;i++){
+        
+        if(array[i] > max){
+            max= array[i];
+            index = i;
+        }
+    }
+    return index;
+}
+// function setPosition(index){
+//     var arrayOfPosition = [];
+//     arrayOfPosition[0]= index;
+//     arrayOfPosition[1]= index+1;
+//     arrayOfPosition[2]= index+2;
+//     return arrayOfPosition;
+// }
+
+
+//find max path
+function findMaxPath(array){//main array
+    var sum  =75+95;//0-0
+    var index=0;
+    var tempArray =Array(3);//save the array of [3,6,4]
+    var indexArray =[];//save the array of [1,2,3]
+    var maxIndex;
+    for (var i =2;i<array.length;i++){
+        while(i<array.length){
+        
+        //array[2] = [3,10,6,4,7];
+        indexArray=setPosition(index);//indexArray=[0,1,2]
+        tempArray.push(array[i][index],array[i][index+1],array[i][index+2]);
+        //tempArray=[3,10,6]
+        //cal the max of tempArray
+        
+        sum+= maxOfEach(tempArray);
+        maxIndex=findIndex(array[i].indexOf(maxOfEach(tempArray)));
+        index = maxIndex;
+        }
+
+    }
+    return sum;
+}
+
 
 })();
+
+
