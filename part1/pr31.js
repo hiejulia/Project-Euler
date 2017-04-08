@@ -16,6 +16,7 @@ for(var a= MONEY;a>=0;a-=200){
                     for (var f = e; f >= 0; f -= 5) {
                         for (var g = f; g >= 0; g -= 2) {
                             COUNT++;
+                            console.log('Result is '+COUNT);
                         }
                     }
                 }
@@ -29,6 +30,14 @@ for(var a= MONEY;a>=0;a-=200){
  */
 
 var coinSize = [1,2,5,10,20,50,100,200];
+var  ways =new Array(MONEY+1);
+ways[0] =1;
+
+for (var i = 0; i < coinSize.Length; i++) {
+    for (var j = coinSizes[i]; j <= MONEY; j++) {
+        ways[j] += ways[j - coinSizes[i]];
+    }
+}
 
 
 /**
