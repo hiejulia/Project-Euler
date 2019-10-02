@@ -6,4 +6,21 @@
 + Data structure and algorithm with Java - Python
 
 
+## Data structure 
++ Vector
++ Linked list 
++ Stack - queue 
++ Hash map 
++ 
++ 
++ 
 
+
+
+## Algorithms
++ Bloom filter 
++ Breadth-first iterative search
++ k way merge 
++ 
++ 
++ 

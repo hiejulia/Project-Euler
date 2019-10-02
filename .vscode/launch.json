@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CollectionExample",
+            "request": "launch",
+            "mainClass": "CollectionExample",
+            "projectName": "Project-Euler_cc7dc986"
+        }
+    ]
+}
