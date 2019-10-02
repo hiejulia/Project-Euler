@@ -21,6 +21,7 @@
 + Bloom filter 
 + Breadth-first iterative search
 + k way merge 
-+ 
++ Greedy algorithm
++ Divide and conquer 
 + 
 + 
