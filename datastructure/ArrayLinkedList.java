@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 class ArrayLinkedList {
     public static void main(String [] args) {
@@ -67,9 +67,35 @@ class ArrayLinkedList {
         duration = endTime - startTime;
         System.out.println("LinkedList remove: " + duration);
 
-        
- 
-		
+
+
+
+        // ArrayList 
+        String[] test1 = {"a","b"};
+        String[] test2 = {"c","d"};
+
+        List<String> list1 = new LinkedList<>();
+        List<String> list2 = new LinkedList<>();
+
+
+        // Add test1,test2 to list1,list2
+        for(int count = 0; count < test1.length; count++){
+            list1.add(test1[count]);
+        }
+
+        list2.addAll(list1);
+
+        // Transform list 2 to UPper case letter 
+        ListIterator<String> listIterator = list2.listIterator();
+
+
+
+
+        // Tranverse list = ListIterator 
+
+
+
+        // Delete value from n - > m index in list 	
     }
 
 }
