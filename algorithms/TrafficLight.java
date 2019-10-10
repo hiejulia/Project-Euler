@@ -78,4 +78,52 @@ class TrafficLight {
         return result;
     }
 
+
+
+    /**
+     * Lesson 7 : Stacks and Queues
+     */
+
+     // Nesting 
+     public int solution(String S){
+
+
+         // Special case 
+         if (S.isEmpty()) return 1;
+         if (S.length() % 2 == 1) return 0; 
+         // End special case 
+
+
+         Map<Character, Character> map = new HashMap<Character, Character>();
+        map.put('}', '{');
+        map.put(')', '(');
+        map.put(']', '[');
+
+        Stack<Character> stack = new Stack<Character>();
+
+        for(Character c : S.toCharArray()){
+            if(map.containsKey(c)){
+                if(!stack.isEmpty() && map.get(c) == stack.peek()){
+                    stack.pop();
+                }else {
+                    return 0;
+                }             
+
+            } else {
+                stack.push(c);
+            }
+
+        }        
+         return stack.isEmpty() ? 1:0;
+     }
+
+
+
+     
+
+
+
 }
+
+
+
