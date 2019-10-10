@@ -118,6 +118,48 @@ class TrafficLight {
      }
 
 
+     // Lesson 6 - Sorting - MaxProductOfThree 
+
+     public int maxProductOfThree(int[] A){
+         if(A.length <3){
+            return 0;
+         }
+
+         if(A.length == 3) return A[0]*A[1]*A[2];
+
+         // Sort array 
+         Arrays.sort(A);
+
+         if(A[0] < 0 && A[A.length - 1] > 0){
+            if(A[A.length - 3] > 0){
+                return A[A.length-1]*A[A.length-2]*A[A.length-3];
+            } 
+            if(A[A.length - 2] > 0 && A[A.length - 3] < 0){
+                return A[0]*A[1]*A[2];
+            }
+            if(A[A.length - 2] < 0 && A[A.length -1 ] > 0){
+                return A[A.length-1]*A[A.length-2]*A[A.length-3];
+            }
+         }
+
+
+         if(A[0] < 0 && A[A.length - 1] < 0){
+            return A[0]*A[1]*A[2];
+        }
+
+
+
+        if(A[0] > 0 && A[A.length - 1] > 0){
+            return A[A.length-1]*A[A.length-2]*A[A.length-3];
+        }
+
+
+
+
+
+     } 
+
+
 
      
 
