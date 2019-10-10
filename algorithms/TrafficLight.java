@@ -31,7 +31,7 @@ class TrafficLight {
 
 
 
-    //
+    // Smallest avg in an array partition 
 
     public static int smallestAvg(int[] A){
 
@@ -48,13 +48,37 @@ class TrafficLight {
             if((i+2)<A.length && ((A[i] + A[i+1] + A[i+2])/(double)3) < smallestAvgValue){
                 smallestAvgValue = ((A[i] + A[i+1] + A[i+2])/(double)3);
                 smallestStart = i;
-            }i
+            }
         }
 
 
 
         return smallestStart;
     }
+
+
+    // Lesson 3: Time complexity 
+    // FrogJump - count the minimal number of jumps from X - Y 
+    
+    public static int frogJump(int X, int Y, int D)){
+
+        int minJump  = 0;
+
+        if (X >= Y) return 0;
+
+        if (D == 0) return -1;
+
+        if(Y-X % D == 0){
+            minJump = (Y - X) / D;
+        } else {
+            minJump= (Y - X) / D +1;
+        }
+        return minJump;
+
+    }
+
+
+
 
 
 
