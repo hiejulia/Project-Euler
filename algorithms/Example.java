@@ -33,4 +33,34 @@ class Example {
         return factors;
     }
 
+
+    /**
+     * CODILITY EXERCISE 
+     */
+
+     // Binary search tree 
+
+
+
+
+
+     // Dynamic programming
+
+        // 1. K[] - and f[] = {} : search times 
+        // Find binary tree - with K - sum of f is min 
+
+
+        
+
+    
+    // Find missing number in array
+
+    
+
+
+
 }
+
+
+
+
