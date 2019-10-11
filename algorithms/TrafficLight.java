@@ -1,5 +1,7 @@
 import java.util.*;
 
+import com.sun.jmx.mbeanserver.MXBeanSupport;
+
 class TrafficLight {
 
     // Design traffic light
@@ -142,22 +144,87 @@ class TrafficLight {
             }
          }
 
-
-         if(A[0] < 0 && A[A.length - 1] < 0){
+        if(A[0] < 0 && A[A.length - 1] < 0){
             return A[0]*A[1]*A[2];
         }
-
-
 
         if(A[0] > 0 && A[A.length - 1] > 0){
             return A[A.length-1]*A[A.length-2]*A[A.length-3];
         }
-
-
-
-
-
      } 
+
+     /**
+      * Lesson 8 - Dominator 
+      */
+
+      public int leaderFunction(int[] A){
+          int result = 0;
+
+          if(A.length ==0) return 0;
+        
+
+          Map<Integer, Integer> map = new HashMap<>();
+
+
+          for(int i = 0;i<A.length/2;i++){
+            if(A[i] == map.get(A[i])){
+                count++;
+                map.put(A[i],count);
+            } else{
+                count = 0;
+                map.put(A[i],count);
+            }
+          }
+
+          // Check if there is any key- value with value >= length/2 
+          return result;
+      }
+
+      // Naive recursive method 
+
+
+
+      public int MaxProfit(int[] A){
+          // Length == 0 || Length == 1 return 0 
+          if(A.length == 1 || A.length == 0){
+            return 0;
+            }
+
+            int maxSoFar = 0;
+            int maxEndingHere = 0;
+            int minPrice  = A[0];
+
+            for(int i = 1; i<A.length;i++){
+                maxEndingHere = Math.max(0,A[i]-minPrice);
+                minPrice = Math.min(minPrice,A[i]);
+                max = Math.max(maxEndingHere-max);
+            }
+            return maxSoFar;
+      }
+
+      // Factor
+
+      public int factorFunction(int N){
+          int count = 0;
+
+          for (int i=1; i<=(double)Math.sqrt(N); i++) {
+            if(i==(double)Math.sqrt(N)) {
+                count++;
+            }else if(N % i == 0) {
+                result = result + 2;
+            }   
+        }
+
+          return count;
+
+      }
+
+
+
+
+
+
+      
 
 
 
